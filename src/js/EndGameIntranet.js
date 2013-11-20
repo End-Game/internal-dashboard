@@ -36,6 +36,7 @@ $(function(){
 		
 		render: function () {
 			var that = this;
+			console.log(this.collection.models);
 			_.each(this.collection.models, function(item) {
 				that.renderDeadline(item);
 			}, this);
@@ -93,7 +94,21 @@ $(function(){
 	});
 	
 	var collections = new Collections();
-	collections.fetch();
+
+	var EndGameIntranetView = Backbone.View.extend({
+		initialize: function() {
+			collections = new Collections();
+			collections.on("change", this.render, this);
+			collections.fetch();
+			console.log("here");
+		},
+
+		render: function() {
+			console.log("here3");
+			var deadlineListView = new DeadlineListView();
+		}
+	});
+
+	var masterView = new EndGameIntranetView();
 	
-	var deadlineListView = new DeadlineListView();
 } (jQuery));
