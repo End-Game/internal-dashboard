@@ -43,17 +43,14 @@
         <div class="column" id="deadlines">
             <p class="title">Deadlines</p>
             <hr>
-            <ul id="deadline_list"></ul>
         </div>
         <div class="column" id="news_feed">
             <p class="title">News Feed</p>
             <hr>
-            <ul id="news_list"></ul>
         </div>
         <div class="column_last" id="useful_links">
             <p class="title">Useful Links</p>
             <hr>
-            <ul id="links_list"></ul>
         </div>
     </div>
     <!--products block-->
@@ -98,10 +95,21 @@
     </div>
     <!-- templates -->
     <script id="deadlineTemplate" type="text/template">
-        <div>
-            <p class="date_text"><%=date%></p>
-            <p class="text"><%=task%></p>
-        </div>
+        <p class="date_text"><%=date%></p>
+        <p class="text"><%=task%></p>
+    </script>
+    <script id="newsTemplate" type="text/template">
+        <p class="date_text"><%=date%></p>
+        <p class="text"><%=news%></p>
+        <p class="author_text"><%=author%></p>
+    </script>
+    <script id="linksTemplate" type="text/template">
+        <p class="text"><a href=<%=link%>><%=name%></a><%=description%></p>
+    </script>
+    <script id="productTemplate" type="text/template">
+        <p class="text"><%=title%></p>
+        <img src="Images/"<%=dots%>"Dot.png"/>
+        <p class="small_text"><%=descriptsion%></p>
     </script>
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/json2.js"></script>

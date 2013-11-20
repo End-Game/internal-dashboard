@@ -2,21 +2,21 @@ $(function(){
 	var Deadline = Backbone.Model.extend({
 		defaults: {
 			date:"",
-			task:"",
+			task:""
 		}
 	});
 	
 	var DeadlineList = Backbone.Collection.extend({
-		url: "/Users/eilis/git/Clones/internal-dashboard/src/js",
-		model: Deadline,
+		// url: "/Users/eilis/git/Clones/internal-dashboard/src/js",
+		model: Deadline
 		
-		parse: function(res){
-			return res.deadlines;
-		}
+		// parse: function(res){
+		// 	return res.deadlines;
+		// }
 	});
 		
 	var DeadlineView = Backbone.View.extend({
-		tagName: "li",
+		tagName: "div",
 		template: $("deadlineTemplate").html(),
 		
 		render: function () {
@@ -27,11 +27,10 @@ $(function(){
 	});
 	
 	var DeadlineListView = Backbone.View.extend({
-		el: $("#deadline_list"),
+		el: $("#deadlines"),
 		
 		initialize: function () {
-			//this.collection = collections.deadlineList;
-			this.collection = deadlineList;
+			this.collection = collections.deadlineList;
 			this.render();
 		},
 		
@@ -42,11 +41,11 @@ $(function(){
 			}, this);
 		},
 		
-		renderDeadline: function() {
+		renderDeadline: function(item) {
 			var deadlineView = new DeadlineView({
 				model: item
 			});
-			this.$el.append(deadlineView.render().el);
+			$(this.el).append(deadlineView.render().el);
 		}
 	});
 	
@@ -65,17 +64,16 @@ $(function(){
 	
 	var UsefulLink = Backbone.Model.extend({
 		defaults: {
-			date:"",
-			task:"",
+			link:"",
+			name:"",
+			description:""
 		}
 	});
 	
 	var LinkList = Backbone.Collection.extend({
-		model: UsefulLink;
+		model: UsefulLinkj
 	});
 	*/
-	
-/*
 	
 	var Collections = Backbone.Model.extend({
 		url: "js/EndGameIntranet.json",
@@ -84,7 +82,7 @@ $(function(){
 			this.deadlineList = new DeadlineList();
 			/*this.newsList = new NewsList();
 			this.linkList = new LinkList();*/
-/*			this.on("change", this.fetchCollections, this);
+			this.on("change", this.fetchCollections, this);
 		},
 		
 		fetchCollections: function(){
@@ -96,10 +94,6 @@ $(function(){
 	
 	var collections = new Collections();
 	collections.fetch();
-	*/
-	
-	var deadlineList = new DeadlineList();
-	deadlineList.fetch();
 	
 	var deadlineListView = new DeadlineListView();
 } (jQuery));
