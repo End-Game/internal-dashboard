@@ -105,21 +105,21 @@ hr {
 	vertical-align: top;
 }
 
-#deadlines li:first-of-type div{
+#deadlines div:first-of-type {
 	border-radius: 5px;
 	background-color: #80c99c;
 	margin-top: 50px;
 	margin-bottom: 25px;
 }
 
-#deadlines li:first-of-type .date_text {
+#deadlines div:first-of-type .date_text {
 	color: white;
 	margin-left: 15px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-#deadlines li:first-of-type .text {
+#deadlines div:first-of-type .text {
 	color: white;
 	margin-top: 10px;
 	margin-bottom: 10px;

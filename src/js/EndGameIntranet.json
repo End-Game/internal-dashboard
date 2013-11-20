@@ -1,0 +1,155 @@
+{
+	"budget": {
+		"target": "80,000",
+		"actual": "82,000"
+	},
+	"investment": {
+		"supportRatio": "150",
+		"target": "200"
+	},
+	"teamSatisfaction": {
+		"target": "90",
+		"actual": "89"
+	},
+	"deadlines": [
+		{
+			"date": "31.10.13",
+			"task": "SBI Rolled Out"
+		},
+		{
+			"date": "04.11.13",
+			"task": "Milkshakes to be Made"
+		},
+		{
+			"date": "10.11.13",
+			"task": "Rataoea Marketing Site to be Live"
+		},
+		{
+			"date": "23.11.13",
+			"task": "Nerf Gun Battle Begins"
+		},
+		{
+			"date": "01.12.13",
+			"task": "Sea Monkey Army Ready"
+		}
+	],
+	"newsFeed": [
+		{
+			"date": "30.10.13",
+			"news": "Rainbow lockers for the new office!",
+			"author": "andrew"
+		},
+		{
+			"date": "24.10.13",
+			"news": "We won 70 Day Game!!",
+			"author": "andrew"
+		},
+		{
+			"date": "10.10.13",
+			"news": "Jamie, please shower.",
+			"author": "simon"
+		},
+		{
+			"date": "28.09.13",
+			"news": "Hoist landing page is now up, have a play:D.",
+			"author": "andrew"
+		},
+		{
+			"date": "14.09.13",
+			"news": "Whanganui DHB is adopting Rata!",
+			"author": "simon"
+		}
+	],
+	"usefulLinks": [
+		{
+			"link": "insert link here",
+			"name": "HR Shop",
+			"description": "Complete your Reviews"
+		},
+		{
+			"link": "insert link here",
+			"name": "Time Sheets",
+			"description": "Log your Time"
+		},
+		{
+			"link": "insert link here",
+			"name": "Agile Zen",
+			"description": "See your To Do List"
+		},
+		{
+			"link": "insert link here",
+			"name": "Breathe HR",
+				"description": "Apply for Leave"
+		}
+	],
+	"startUp": [
+		{
+			"title": "70 Day Game",
+			"dots": "Double",
+			"description": "Small description about the product/the work we are doing on it."
+		},
+		{
+			"title": "Goodtime Music Academy",
+			"dots": "Triple",
+			"description": "Small description about the product/the work we are doing on it."
+		},
+		{
+			"title": "New Zealand Festival",
+			"dots": "Single",
+			"description": "Small description about the product/the work we are doing on it."
+		},
+		{
+			"title": "Ethos",
+			"dots": "Double",
+			"description": "Small description about the product/the work we are doing on it."
+		}
+	],
+	"operational": [
+		{
+			"title": "Spotlight Reporting",
+			"dots": "Single",
+			"description": "Small description about the product/the work we are doing on it."
+		},
+		{
+			"title": "Workflow Max",
+			"dots": "Triple",
+			"description": "Small description about the product/the work we are doing on it."
+		},
+		{
+			"title": "Hazman",
+			"dots": "Double",
+			"description": "Small description about the product/the work we are doing on it."
+		},
+		{
+			"title": "Hoist",
+			"dots": "Double",
+			"description": "Small description about the product/the work we are doing on it."
+		}
+	],
+	"passive": [
+		{
+			"title": "Moxy Reports",
+			"dots": "Double",
+			"description": "Small description about the product/the work we are doing on it."
+		},
+		{
+			"title": "Rataora",
+			"dots": "Triple",
+			"description": "Small description about the product/the work we are doing on it."
+		},
+		{
+			"title": "Workpapers",
+			"dots": "Single",
+			"description": "Small description about the product/the work we are doing on it."
+		}
+	]
+}
+
+
+
+
+
+
+
+
+
