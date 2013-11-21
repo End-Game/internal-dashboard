@@ -60,11 +60,24 @@
 	vertical-align: top;
 }
 
+canvas {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #graph_block img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 85px; /* TODO  for alignment, remove this when putting in the graphs*/
+	height: 0px; /* hack */
+}
+
+#graph_block p:last-of-type {
+/*	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;*/
+	margin-top: -20px;
 }
 
 .title {
@@ -105,21 +118,21 @@ hr {
 	vertical-align: top;
 }
 
-#deadlines li:first-of-type div{
+#deadlines div:first-of-type{
 	border-radius: 5px;
 	background-color: #80c99c;
 	margin-top: 50px;
 	margin-bottom: 25px;
 }
 
-#deadlines li:first-of-type .date_text {
+#deadlines div:first-of-type .date_text {
 	color: white;
 	margin-left: 15px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-#deadlines li:first-of-type .text {
+#deadlines div:first-of-type .text {
 	color: white;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -127,6 +140,7 @@ hr {
 
 .date_text {
 	display: inline-block;
+	width: 60px;
 	font-size: 21px;
 	font-variant: small-caps;
 	color: #80c99c;
@@ -143,7 +157,7 @@ hr {
 
 #deadlines .text {
 	margin-bottom: -10;
-	width: 200px;
+	width: 220px;
 }
 
 #news_feed div:first-of-type {
@@ -157,13 +171,13 @@ hr {
 }
 
 #news_feed .text {
-	width: 200px;
+	width: 220px;
 }
 
 .author_text {
 	margin-left: 75px;
 	margin-top: -20px;
-	width: 200px;
+	width: 220px;
 	font-size: 21px;
 	font-variant: small-caps;
 	color: #b3b3b3;

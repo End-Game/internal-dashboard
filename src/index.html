@@ -23,16 +23,55 @@
     <!--graph block-->
     <div class="col_container" id="graph_block">
         <div class="column" id="budget">
+            <canvas id="budget_canvas" width="200px" height="200px"></canvas>
+            <script>
+                var c = document.getElementById("budget_canvas");
+                var ctx=c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*5/6, Math.PI*3/2, true);
+                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*5/6);
+                ctx.fillStyle = "#80C99C";
+                ctx.fill();
+                var img = new Image();
+                img.src = "Images/BudgetImage.png";
+                ctx.drawImage(img, 75, 57);
+            </script>
             <img src="Images/BudgetImage.png"/>
             <p class="title">Budget</p>
             <hr>
         </div>
         <div class="column" id="investment">
+            <canvas id="investment_canvas" width="200px" height="200px"></canvas>
+            <script>
+                var c = document.getElementById("investment_canvas");
+                var ctx=c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*2/3, Math.PI*3/2, true);
+                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*2/3);
+                ctx.fillStyle = "#D82253";
+                ctx.fill();
+                var img = new Image();
+                img.src = "Images/InvestmentImage.png";
+                ctx.drawImage(img, 60, 57);
+            </script>
             <img src="Images/InvestmentImage.png"/>
             <p class="title">Investment</p>
             <hr>
         </div>
         <div  class="column_last" id="team_satisfaction">
+            <canvas id="team_satisfaction_canvas" width="200px" height="200px"></canvas>
+            <script>
+                var c = document.getElementById("team_satisfaction_canvas");
+                var ctx=c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*7/8, Math.PI*3/2, true);
+                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*7/8);
+                ctx.fillStyle = "#666666";
+                ctx.fill();
+                var img = new Image();
+                img.src = "Images/SatisfactionImage.png";
+                ctx.drawImage(img, 57, 57);
+            </script>
             <img src="Images/SatisfactionImage.png"/>
             <p class="title">Team Satisfaction</p>
             <hr>
@@ -103,17 +142,21 @@
         <p class="text"><%=news%></p>
         <p class="author_text"><%=author%></p>
     </script>
-    <script id="linksTemplate" type="text/template">
-        <p class="text"><a href=<%=link%>><%=name%></a><%=description%></p>
+    <script id="linkTemplate" type="text/template">
+        <p class="text"><a href=<%=link%>><%=name%></a> <%=description%></p>
     </script>
     <script id="productTemplate" type="text/template">
         <p class="text"><%=title%></p>
-        <img src="Images/"<%=dots%>"Dot.png"/>
-        <p class="small_text"><%=descriptsion%></p>
+        <img src="Images/<%=dots%>Dot.png"/>
+        <p class="small_text"><%=description%></p>
+    </script>
+    <script id="graphDataTemplate" type="text/template">
+        <span><%=title%>:</span> <%=data%>
     </script>
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/json2.js"></script>
     <script src="js/underscore-min.js"></script>
     <script src="js/backbone-min.js"></script>
     <script src='js/EndGameIntranet.js'></script>
+
 </body>
