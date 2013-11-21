@@ -30,36 +30,12 @@
         </div>
         <div class="column" id="investment">
             <canvas id="investment_canvas" width="200px" height="200px"></canvas>
-            <script>
-                var c = document.getElementById("investment_canvas");
-                var ctx=c.getContext("2d");
-                ctx.beginPath();
-                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*2/3, Math.PI*3/2, true);
-                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*2/3);
-                ctx.fillStyle = "#D82253";
-                ctx.fill();
-                var img = new Image();
-                img.src = "Images/InvestmentImage.png";
-                ctx.drawImage(img, 60, 65);
-            </script>
             <img src="Images/InvestmentImage.png"/>
             <p class="title">Investment</p>
             <hr>
         </div>
         <div  class="column_last" id="team_satisfaction">
             <canvas id="team_satisfaction_canvas" width="200px" height="200px"></canvas>
-            <script>
-                var c = document.getElementById("team_satisfaction_canvas");
-                var ctx=c.getContext("2d");
-                ctx.beginPath();
-                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*8/9, Math.PI*3/2, true);
-                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*8/9);
-                ctx.fillStyle = "#666666";
-                ctx.fill();
-                var img = new Image();
-                img.src = "Images/SatisfactionImage.png";
-                ctx.drawImage(img, 57, 57);
-            </script>
             <img src="Images/SatisfactionImage.png"/>
             <p class="title">Team Satisfaction</p>
             <hr>
