@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 			}
 		},
 		jshint: {
-			files: ['gruntfile.js', 'src/**/*.js'],
+			files: ['gruntfile.js', 'src/js/EndGameIntranet.js'],
 			options: {
 				globals: {
 					jQuery: true,
