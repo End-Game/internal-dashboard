@@ -1,4 +1,24 @@
 $(function(){
+    function shadeColor(color, percent) {
+        var R = parseInt(color.substring(1,3),16);
+        var G = parseInt(color.substring(3,5),16);
+        var B = parseInt(color.substring(5,7),16);
+
+        R = parseInt(R * (100 + percent) / 100);
+        G = parseInt(G * (100 + percent) / 100);
+        B = parseInt(B * (100 + percent) / 100);
+
+        R = (R<255)?R:255;  
+        G = (G<255)?G:255;  
+        B = (B<255)?B:255;  
+
+        var RR = ((R.toString(16).length==1)?"0"+R.toString(16):R.toString(16));
+        var GG = ((G.toString(16).length==1)?"0"+G.toString(16):G.toString(16));
+        var BB = ((B.toString(16).length==1)?"0"+B.toString(16):B.toString(16));
+
+        return "#"+RR+GG+BB;
+    }
+
     var GraphData = Backbone.Model.extend({
         defaults: {
             title:"",
@@ -35,6 +55,7 @@ $(function(){
             _.each(this.collection.models, function(item) {
                 that.renderGraphData(item);
             }, this);
+            this.renderGraph();
         },
         
         renderGraphData: function(item) {
@@ -42,6 +63,33 @@ $(function(){
                 model: item
             });
             this.$el.append(graphDataView.render().el);
+        },
+        
+        renderGraph: function() {
+            var c = document.getElementById("budget_canvas");
+            var ctx = c.getContext("2d");
+            var target = this.collection.models[0].get("data");
+            var actual = this.collection.models[1].get("data");
+            target = parseFloat(target.substring(1, target.length));
+            actual = parseFloat(actual.substring(1, actual.length));
+            percent = actual/target;
+            var colour = "#80C99C";
+            ctx.beginPath();
+            ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*percent, Math.PI*3/2, true);
+            ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*percent);
+            ctx.fillStyle = colour;
+            ctx.fill();
+            if(percent > 1){
+                percent -= 1;
+                ctx.beginPath();
+                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*percent, Math.PI*3/2, true);
+                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*percent);
+                ctx.fillStyle = shadeColor(colour, -40);
+                ctx.fill();
+            }
+            var img = new Image();
+            img.src = "Images/BudgetImage.png";
+            ctx.drawImage(img, 75, 57);
         }
     });
     
@@ -51,6 +99,7 @@ $(function(){
         initialize: function () {
             this.collection = collections.investmentList;
             this.render();
+            this.renderGraph();
         },
         
         render: function () {
@@ -65,7 +114,36 @@ $(function(){
                 model: item
             });
             this.$el.append(graphDataView.render().el);
+        },
+        
+        renderGraph: function() {
+            var c = document.getElementById("investment_canvas");
+            var ctx=c.getContext("2d");
+            ctx.beginPath();
+            var target = this.collection.models[1].get("data");
+            var actual = this.collection.models[0].get("data");
+            target = parseFloat(target.substring(0, target.length-1));
+            actual = parseFloat(actual.substring(0, actual.length-1));
+            percent = actual/target;
+            var colour = "#D82253";
+            ctx.beginPath();
+            ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*percent, Math.PI*3/2, true);
+            ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*percent);
+            ctx.fillStyle = colour;
+            ctx.fill();
+            if(percent > 1){
+                percent -= 1;
+                ctx.beginPath();
+                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*percent, Math.PI*3/2, true);
+                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*percent);
+                ctx.fillStyle = shadeColor(colour, -40);
+                ctx.fill();
+            }
+            var img = new Image();
+            img.src = "Images/InvestmentImage.png";
+            ctx.drawImage(img, 60, 65);
         }
+        
     });
     
     var TeamSatisfactionView = Backbone.View.extend({
@@ -74,6 +152,7 @@ $(function(){
         initialize: function () {
             this.collection = collections.teamSatisfactionList;
             this.render();
+            this.renderGraph();
         },
         
         render: function () {
@@ -88,6 +167,33 @@ $(function(){
                 model: item
             });
             this.$el.append(graphDataView.render().el);
+        },
+        
+        renderGraph: function() {
+            var c = document.getElementById("team_satisfaction_canvas");
+            var ctx=c.getContext("2d");
+            var target = this.collection.models[0].get("data");
+            var actual = this.collection.models[1].get("data");
+            target = parseFloat(target.substring(0, target.length-1));
+            actual = parseFloat(actual.substring(0, actual.length-1));
+            percent = actual/target;
+            var colour = "#666666";
+            ctx.beginPath();
+            ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*percent, Math.PI*3/2, true);
+            ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*percent);
+            ctx.fillStyle = colour;
+            ctx.fill();
+            if(percent > 1){
+                percent -= 1;
+                ctx.beginPath();
+                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*percent, Math.PI*3/2, true);
+                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*percent);
+                ctx.fillStyle = shadeColor(colour, -40);
+                ctx.fill();
+            }
+            var img = new Image();
+            img.src = "Images/SatisfactionImage.png";
+            ctx.drawImage(img, 57, 57);
         }
     });
     

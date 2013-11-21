@@ -24,18 +24,6 @@
     <div class="col_container" id="graph_block">
         <div class="column" id="budget">
             <canvas id="budget_canvas" width="200px" height="200px"></canvas>
-            <script>
-                var c = document.getElementById("budget_canvas");
-                var ctx=c.getContext("2d");
-                ctx.beginPath();
-                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*5/6, Math.PI*3/2, true);
-                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*5/6);
-                ctx.fillStyle = "#80C99C";
-                ctx.fill();
-                var img = new Image();
-                img.src = "Images/BudgetImage.png";
-                ctx.drawImage(img, 75, 57);
-            </script>
             <img src="Images/BudgetImage.png"/>
             <p class="title">Budget</p>
             <hr>
@@ -52,7 +40,7 @@
                 ctx.fill();
                 var img = new Image();
                 img.src = "Images/InvestmentImage.png";
-                ctx.drawImage(img, 60, 57);
+                ctx.drawImage(img, 60, 65);
             </script>
             <img src="Images/InvestmentImage.png"/>
             <p class="title">Investment</p>
@@ -64,8 +52,8 @@
                 var c = document.getElementById("team_satisfaction_canvas");
                 var ctx=c.getContext("2d");
                 ctx.beginPath();
-                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*7/8, Math.PI*3/2, true);
-                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*7/8);
+                ctx.arc(100,100,80, Math.PI*3/2 + 2*Math.PI*8/9, Math.PI*3/2, true);
+                ctx.arc(100,100,100,Math.PI*3/2, Math.PI*3/2 + 2*Math.PI*8/9);
                 ctx.fillStyle = "#666666";
                 ctx.fill();
                 var img = new Image();
@@ -133,6 +121,9 @@
         <p class="white_text">VIEW GRAPH</p>
     </div>
     <!-- templates -->
+    <script id="graphDataTemplate" type="text/template">
+        <span><%=title%>:</span> <%=data%>
+    </script>
     <script id="deadlineTemplate" type="text/template">
         <p class="date_text"><%=date%></p>
         <p class="text"><%=task%></p>
@@ -149,9 +140,6 @@
         <p class="text"><%=title%></p>
         <img src="Images/<%=dots%>Dot.png"/>
         <p class="small_text"><%=description%></p>
-    </script>
-    <script id="graphDataTemplate" type="text/template">
-        <span><%=title%>:</span> <%=data%>
     </script>
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/json2.js"></script>
