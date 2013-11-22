@@ -427,8 +427,6 @@ $(function(){
     });
     
     var Collections = Backbone.Model.extend({
-        url: "js/EndGameIntranet.json",
-        
         initialize: function() {
             this.budgetList = new GraphDataList();
             this.investmentList = new GraphDataList();
@@ -439,29 +437,28 @@ $(function(){
             this.startUpList = new ProductList();
             this.operationalList = new ProductList();
             this.passiveList = new ProductList();
-            this.on("change", this.fetchCollections, this);
+            this.fetchCollections();
         },
         
         fetchCollections: function(){
-            this.budgetList.reset(this.get("budget"));
-            this.investmentList.reset(this.get("investment"));
-            this.teamSatisfactionList.reset(this.get("teamSatisfaction"));
-            this.deadlineList.reset(this.get("deadlines"));
-            this.newsList.reset(this.get("newsFeed"));
-            this.linkList.reset(this.get("usefulLinks"));
-            this.startUpList.reset(this.get("startUp"));
-            this.operationalList.reset(this.get("operational"));
-            this.passiveList.reset(this.get("passive"));
+            this.budgetList.reset(jsonData.budget);
+            this.investmentList.reset(jsonData.investment);
+            this.teamSatisfactionList.reset(jsonData.teamSatisfaction);
+            this.deadlineList.reset(jsonData.deadlines);
+            this.newsList.reset(jsonData.newsFeed);
+            this.linkList.reset(jsonData.usefulLinks);
+            this.startUpList.reset(jsonData.startUp);
+            this.operationalList.reset(jsonData.operational);
+            this.passiveList.reset(jsonData.passive);
         }
     });
     
-    var collections = new Collections();
+    var collections = "";
 
     var EndGameIntranetView = Backbone.View.extend({
         initialize: function() {
             collections = new Collections();
-            collections.on("change", this.render, this);
-            collections.fetch();
+            this.render();
         },
 
         render: function() {
@@ -477,6 +474,25 @@ $(function(){
         }
     });
 
-    var masterView = new EndGameIntranetView();
-    
+    var jsonData = "";
+    var dataReady = false;
+    $.ajax({
+        url: "http://data.hoi.io/EndGamePortal/data",
+        type: "GET",
+        dataType: "json",
+        xhrFields: {
+            withCredentials: true
+        },
+        crossDomain: true,
+        headers: {
+            "Authorization" : "Hoist RTDLWHTHPNBWXIUJEZFT"
+        },
+        success: function (data){
+            jsonData = data;
+            console.log(data);
+            var masterView = new EndGameIntranetView();
+        }, error: function (){
+            console.log("data get unsuccessful");
+        }
+    });
 } (jQuery));

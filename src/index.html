@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>EndGame</title>
         <link rel="stylesheet" type="text/css" href="EndGameIntranet.css">
         <script type="text/javascript" src="http://use.typekit.net/pnr3zhl.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -24,18 +25,18 @@
     <div class="col_container" id="graph_block">
         <div class="column" id="budget">
             <canvas id="budget_canvas" width="200px" height="200px"></canvas>
-            <img src="Images/BudgetImage.png"/>
+            <img class="graphimg" src="Images/BudgetImage.png"/>
             <p class="title">Budget</p>
             <hr>
         </div>
         <div class="column" id="investment">
             <canvas id="investment_canvas" width="200px" height="200px"></canvas>
-            <img src="Images/InvestmentImage.png"/>
+            <img class="graphimg" id="investmentimg" src="Images/InvestmentImage.png"/>
             <p class="title">Investment</p>
             <hr>
         </div>
         <div  class="column_last" id="team_satisfaction">
-            <canvas id="team_satisfaction_canvas" width="200px" height="200px"></canvas>
+            <canvas class="graphimg" id="team_satisfaction_canvas" width="200px" height="200px"></canvas>
             <img src="Images/SatisfactionImage.png"/>
             <p class="title">Team Satisfaction</p>
             <hr>

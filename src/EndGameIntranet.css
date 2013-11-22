@@ -70,7 +70,16 @@ canvas {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 0px; /* hack */
+	margin-top: -143px;
+	margin-bottom: 82px;
+}
+
+#investmentimg {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -135px;
+	margin-bottom: 82px;
 }
 
 #graph_block p:last-of-type {
