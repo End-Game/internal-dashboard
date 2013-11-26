@@ -1,31 +1,31 @@
 {
     "budget": [
         {
-            "title": "Target",
+            "dataTitle": "Target",
             "data": "$80,000"
         },
         {
-            "title": "Actual",
+            "dataTitle": "Actual",
             "data": "$82,000"
         }
     ],
     "investment": [
         {
-            "title": "SupportRatio",
+            "dataTitle": "SupportRatio",
             "data": "150%"
         },
         {
-            "title": "Target",
+            "dataTitle": "Target",
             "data": "200%"
         }
     ],
     "teamSatisfaction": [
         {
-            "title": "Target",
+            "dataTitle": "Target",
             "data": "90%"
         },
         {
-            "title": "Actual",
+            "dataTitle": "Actual",
             "data": "89%"
         }
     ],
@@ -102,61 +102,61 @@
     ],
     "startUp": [
         {
-            "title": "70 Day Game",
+            "name": "70 Day Game",
             "dots": "Double",
             "description": "Small description about the product/the work we are doing on it."
         },
         {
-            "title": "Goodtime Music Academy",
+            "name": "Goodtime Music Academy",
             "dots": "Triple",
             "description": "Small description about the product/the work we are doing on it."
         },
         {
-            "title": "New Zealand Festival",
+            "name": "New Zealand Festival",
             "dots": "Single",
             "description": "Small description about the product/the work we are doing on it."
         },
         {
-            "title": "Ethos",
+            "name": "Ethos",
             "dots": "Double",
             "description": "Small description about the product/the work we are doing on it."
         }
     ],
     "operational": [
         {
-            "title": "Spotlight Reporting",
+            "name": "Spotlight Reporting",
             "dots": "Single",
             "description": "Small description about the product/the work we are doing on it."
         },
         {
-            "title": "Workflow Max",
+            "name": "Workflow Max",
             "dots": "Triple",
             "description": "Small description about the product/the work we are doing on it."
         },
         {
-            "title": "Hazman",
+            "name": "Hazman",
             "dots": "Double",
             "description": "Small description about the product/the work we are doing on it."
         },
         {
-            "title": "Hoist",
+            "name": "Hoist",
             "dots": "Double",
             "description": "Small description about the product/the work we are doing on it."
         }
     ],
     "passive": [
         {
-            "title": "Moxy Reports",
+            "name": "Moxy Reports",
             "dots": "Double",
             "description": "Small description about the product/the work we are doing on it."
         },
         {
-            "title": "Rataora",
+            "name": "Rataora",
             "dots": "Triple",
             "description": "Small description about the product/the work we are doing on it."
         },
         {
-            "title": "Workpapers",
+            "name": "Workpapers",
             "dots": "Single",
             "description": "Small description about the product/the work we are doing on it."
         }

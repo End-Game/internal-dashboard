@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>EndGame</title>
-        <link rel="stylesheet" type="text/css" href="EndGameIntranet.css">
-        <script type="text/javascript" src="http://use.typekit.net/pnr3zhl.js"></script>
+        <script type="text/javascript" src="https://use.typekit.net/pnr3zhl.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <script src="http://127.0.0.1:35729/livereload.js"></script>
+        <link rel="stylesheet" type="text/css" href="EndGameIntranet.css">
     </head>
     <body>
     <!--endgame logo-->
@@ -36,8 +37,8 @@
             <hr>
         </div>
         <div  class="column_last" id="team_satisfaction">
-            <canvas class="graphimg" id="team_satisfaction_canvas" width="200px" height="200px"></canvas>
-            <img src="Images/SatisfactionImage.png"/>
+            <canvas id="team_satisfaction_canvas" width="200px" height="200px"></canvas>
+            <img class="graphimg" src="Images/SatisfactionImage.png"/>
             <p class="title">Team Satisfaction</p>
             <hr>
         </div>
@@ -83,7 +84,7 @@
                 <p class="text">Time</p>
             </div>
             <div class="large">
-                <p class="text">Client & Project</p>
+                <p class="text">Client &amp Project</p>
             </div>
             <div class="large">
                 <p class="text">Task</p>
@@ -99,7 +100,7 @@
     </div>
     <!-- templates -->
     <script id="graphDataTemplate" type="text/template">
-        <span><%=title%>:</span> <%=data%>
+        <span><%=dataTitle%>:</span> <%=data%>
     </script>
     <script id="deadlineTemplate" type="text/template">
         <p class="date_text"><%=date%></p>
@@ -114,14 +115,13 @@
         <p class="text"><a href=<%=link%>><%=name%></a> <%=description%></p>
     </script>
     <script id="productTemplate" type="text/template">
-        <p class="text"><%=title%></p>
+        <p class="text"><%=name%></p>
         <img src="Images/<%=dots%>Dot.png"/>
         <p class="small_text"><%=description%></p>
     </script>
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/json2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/underscore-min.js"></script>
     <script src="js/backbone-min.js"></script>
     <script src='js/EndGameIntranet.js'></script>
-
 </body>
