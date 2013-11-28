@@ -6,12 +6,12 @@ module.exports = function(grunt) {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
 			},
 			dist: {
-				files: ['src/**/*.js'],
+				files: ['app/**/*.js'],
 				dest: 'build/<%= pkg.name %>.min.js'
 			}
 		},
 		jshint: {
-			files: ['gruntfile.js', 'src/js/EndGameIntranet.js'],
+			files: ['gruntfile.js', 'app/scripts/*.js'],
 			options: {
 				globals: {
 					jQuery: true,
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 				tasks: ['jshint']
 			},
 			html: {
-				files: ['src/**/*.html', 'src/**/*.css'],
+				files: ['app/*.html', 'app/*.css'],
 			}
 		},
 		express: {
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 				options: {
 					port: 9000,
 					hostname: "0.0.0.0",
-					bases: ['src/'],
+					bases: ['app/'],
 					livereload: true
 				}
 			}
