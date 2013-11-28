@@ -344,6 +344,7 @@ define(['intranet', 'backbone', 'hoist'], function(Intranet, Backbone, hoist) {
 
         },
         signup: function() {
+            $('section').hide();
             new Intranet.SignUp();
         }
 
@@ -351,6 +352,7 @@ define(['intranet', 'backbone', 'hoist'], function(Intranet, Backbone, hoist) {
 
     Intranet.SignUp = Intranet.View.extend({
         events: {
+            'click .login a': 'login',
             'click .signup a': 'signup'
         },
 
@@ -370,6 +372,11 @@ define(['intranet', 'backbone', 'hoist'], function(Intranet, Backbone, hoist) {
                 console.log("signup unsuccessful");
             });
             return false;
+        },
+        
+        login: function() {
+            $('section').hide();
+            new Intranet.Login();
         }
     });
 
